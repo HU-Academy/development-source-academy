@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хөгжлийн Ундрага Академи - Мэргэжлийн Сургалтын Төв</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0B3C5D',
+                            lightBlue: '#328CC1',
+                            gold: '#D9B310',
+                            dark: '#1D2731',
+                            accent: '#E63946',
+                            softBg: '#F4F7F6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(11, 60, 93, 0.95) 0%, rgba(29, 39, 49, 0.9) 100%), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #328CC1, #D9B310);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-brand-softBg antialiased">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-brand-dark text-white text-xs sm:text-sm py-2 px-4 border-b border-gray-700">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span><i class="fa-solid fa-graduation-cap text-brand-gold mr-1"></i> Мэргэшсэн сургалт, баталгаажсан сертификат</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-brand-gold mr-1"></i> Даваа - Бямба: 09:00 - 18:00</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="tel:99354112" class="hover:text-brand-gold transition flex items-center font-semibold">
+                    <i class="fa-solid fa-phone text-emerald-400 mr-1.5"></i> 99354112
+                </a>
+                <a href="tel:88194112" class="hover:text-brand-gold transition flex items-center font-semibold">
+                    <i class="fa-solid fa-phone text-emerald-400 mr-1.5"></i> 88194112
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-blue flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:bg-brand-lightBlue transition">
+                        <i class="fa-solid fa-shield-halved text-brand-gold"></i>
+                    </div>
+                    <div>
+                        <div class="text-xl font-black text-brand-blue tracking-tight leading-tight">ХӨГЖЛИЙН УНДРАГА</div>
+                        <div class="text-xs font-semibold text-gray-500 tracking-wider">АКАДЕМИ МЭРГЭЖЛИЙН СУРГАЛТ</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8 font-medium text-gray-700">
+                    <a href="#about" class="hover:text-brand-lightBlue transition">Бидний тухай</a>
+                    <a href="#courses" class="hover:text-brand-lightBlue transition">Сургалтууд</a>
+                    <a href="#advantages" class="hover:text-brand-lightBlue transition">Давуу тал</a>
+                    <a href="#reviews" class="hover:text-brand-lightBlue transition">Сэтгэгдэл</a>
+                    <a href="#contact" class="hover:text-brand-lightBlue transition">Холбоо барих</a>
+                </div>
+
+                <!-- Call to action button -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <button onclick="openModal()" class="bg-brand-blue hover:bg-brand-lightBlue text-white font-semibold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span>Бүртгүүлэх</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden text-gray-700 hover:text-brand-blue text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-gray-700 font-medium hover:text-brand-blue">Бидний тухай</a>
+            <a href="#courses" class="block py-2 text-gray-700 font-medium hover:text-brand-blue">Сургалтууд</a>
+            <a href="#advantages" class="block py-2 text-gray-700 font-medium hover:text-brand-blue">Давуу тал</a>
+            <a href="#reviews" class="block py-2 text-gray-700 font-medium hover:text-brand-blue">Сэтгэгдэл</a>
+            <a href="#contact" class="block py-2 text-gray-700 font-medium hover:text-brand-blue">Холбоо барих</a>
+            <div class="pt-2">
+                <button onclick="openModal()" class="w-full bg-brand-blue text-white font-semibold py-3 rounded-xl shadow">
+                    Онлайн Бүртгүүлэх
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-bg relative text-white py-20 lg:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-brand-gold text-sm font-semibold">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>Төгсөгчдөд албан ёсны эрхийн сертификат олгоно</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight">
+                        Ирээдүйн чадварлаг <br><span class="gradient-text">Мэргэжилтэн</span> болоорой
+                    </h1>
+
+                    <p class="text-lg text-gray-200 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Хүнд машин механизм, техникийн болон оффисын нарийн мэргэжлээр дадлага туршлагатай багш нар онол болон дадлага хосолсон чанартай сургалтад таныг урьж байна.
+                    </p>
+
+                    <!-- Quick Contact Badges -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                        <a href="tel:99354112" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg flex items-center space-x-3 transition transform hover:scale-105">
+                            <i class="fa-solid fa-phone-volume text-xl"></i>
+                            <div class="text-left">
+                                <div class="text-xs font-normal opacity-90">Шууд залгах 1</div>
+                                <div class="text-lg">99354112</div>
+                            </div>
+                        </a>
+                        <a href="tel:88194112" class="bg-brand-lightBlue hover:bg-blue-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg flex items-center space-x-3 transition transform hover:scale-105">
+                            <i class="fa-solid fa-phone-volume text-xl"></i>
+                            <div class="text-left">
+                                <div class="text-xs font-normal opacity-90">Шууд залгах 2</div>
+                                <div class="text-lg">88194112</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pt-4 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-300">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span>Дадлага дээр суурилсан</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span>Ажилд зуучлах боломж</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Form / Highlights Box -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/95 backdrop-blur-lg rounded-2xl p-6 sm:p-8 text-gray-800 shadow-2xl border border-white/40">
+                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Хурдан Бүртгэл</h3>
+                        <p class="text-sm text-gray-600 mb-6">Сонирхож буй сургалтаа сонгон мэдээллээ үлдээгээрэй.</p>
+
+                        <form id="heroQuickForm" onsubmit="handleQuickSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Таны Нэр</label>
+                                <input type="text" required placeholder="Овог Нэр" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Утасны Дугаар</label>
+                                <input type="tel" required placeholder="99XXXXXX" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Мэргэжил сонгох</label>
+                                <select required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none bg-white">
+                                    <option value="">-- Мэргэжил сонгоно уу --</option>
+                                    <option>1. Ковш оператор</option>
+                                    <option>2. Экскаватор оператор</option>
+                                    <option>3. Дамп оператор</option>
+                                    <option>4. Нарийн бичгийн дарга & Архивын ажилтан</option>
+                                    <option>5. Цахилгаанчин</option>
+                                    <option>6. Нярав</option>
+                                    <option>7. Гагнуурчин</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-brand-gold hover:bg-yellow-500 text-brand-dark font-black py-3.5 rounded-lg shadow-md transition transform active:scale-98">
+                                СУРГАЛТАД БҮРТГҮҮЛЭХ
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="bg-white py-8 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-blue mb-1">1000+</div>
+                    <div class="text-sm font-medium text-gray-500">Нийт төгсөгчид</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-blue mb-1">7+</div>
+                    <div class="text-sm font-medium text-gray-500">Чанартай мэргэжил</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-blue mb-1">95%</div>
+                    <div class="text-sm font-medium text-gray-500">Ажилд зуучлагдсан</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-blue mb-1">100%</div>
+                    <div class="text-sm font-medium text-gray-500">Дадлагад суурилсан</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSES SECTION -->
+    <section id="courses" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-xs font-bold tracking-widest text-brand-lightBlue uppercase mb-2">Сургалтын хөтөлбөрүүд</h2>
+            <p class="text-3xl sm:text-4xl font-black text-brand-blue">Манай Мэргэжлийн Сургалтууд</p>
+            <p class="mt-3 text-gray-600">Хөдөлмөрийн зах зээлд хамгийн өндөр сүүлчтэй, эрэлттэй 7 чиглэлээр мэргэшил олгох сургалтууд.</p>
+            
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mt-8">
+                <button onclick="filterCourses('all')" class="course-tab active-tab bg-brand-blue text-white px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-sm">
+                    Бүгд (7)
+                </button>
+                <button onclick="filterCourses('heavy')" class="course-tab bg-gray-200 text-gray-700 hover:bg-gray-300 px-5 py-2.5 rounded-full text-sm font-semibold transition">
+                    Хүнд машин механизм
+                </button>
+                <button onclick="filterCourses('technical')" class="course-tab bg-gray-200 text-gray-700 hover:bg-gray-300 px-5 py-2.5 rounded-full text-sm font-semibold transition">
+                    Техник ба Гагнуур
+                </button>
+                <button onclick="filterCourses('office')" class="course-tab bg-gray-200 text-gray-700 hover:bg-gray-300 px-5 py-2.5 rounded-full text-sm font-semibold transition">
+                    Оффис & Захиргаа
+                </button>
+            </div>
+        </div>
+
+        <!-- Course Cards Grid -->
+        <div id="courseGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- 1. Ковш -->
+            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="heavy">
+                <div class="relative h-52 overflow-hidden bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="Ковш" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">1. Хүнд машин</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Ковш оператор</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ачигч буюу ковшийн аюулгүй ажиллагаа, жолоодлого, техникийн үйлчилгээний иж бүрэн онол дадлага.</p>
+                        
+                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 2-4 долоо хоног</div>
+                            <div class="flex items-center"><i class="fa-solid fa-gears text-brand-lightBlue mr-2 w-4"></i> Олгох эрх: Жолоодох эрхийн үнэмлэх</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                        <button onclick="openCourseDetails(1)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                        <button onclick="openModal('Ковш оператор')" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Бүртгүүлэх</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Экскаватор -->
+            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="heavy">
+                <div class="relative h-52 overflow-hidden bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=800&q=80" alt="Экскаватор" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">2. Хүнд машин</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Экскаватор оператор</h3>
+                        <p class="text-gray-600 text-sm mb-4">Уул уурхай, барилгын салбарын гол ухагч техник болох экскаваторын мэргэшсэн сургалт.</p>
+                        
+                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 2-4 долоо хоног</div>
+                            <div class="flex items-center"><i class="fa-solid fa-gears text-brand-lightBlue mr-2 w-4"></i> Дадлага: Бодит техник дээр</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                        <button onclick="openCourseDetails(2)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                        <button onclick="openModal('Экскаватор оператор')" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Бүртгүүлэх</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Дамп -->
+            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="heavy">
+                <div class="relative h-52 overflow-hidden bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Дамп" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">3. Хүнд машин</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Дамп оператор</h3>
+                        <p class="text-gray-600 text-sm mb-4">Уул уурхайн хүнд дацын дамп самосвал машины аюулгүй жолоодлого, ашиглалтын сургалт.</p>
+                        
+                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 2-3 долоо хоног</div>
+                            <div class="flex items-center"><i class="fa-solid fa-truck text-brand-lightBlue mr-2 w-4"></i> Уул уурхайн бэлтгэл</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                        <button onclick="openCourseDetails(3)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                        <button onclick="openModal('Дамп оператор')" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Бүртгүүлэх</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Нарийн бичгийн дарга & Архивын ажилтан -->
+            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="office">
+                <div class="relative h-52 overflow-hidden bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Нарийн бичиг" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">4. Оффис</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Нарийн бичиг & Архив</h3>
+                        <p class="text-gray-600 text-sm mb-4">Албан бичиг боловсруулалт, архивын хөтлөлт, байгууллагын соёл, компьютерийн хэрэглээ.</p>
+                        
+                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
+                            <div class="flex items-center"><i class="fa-solid fa-file-contract text-brand-lightBlue mr-2 w-4"></i> MNS стандартын дагуу</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                        <button onclick="openCourseDetails(4)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                        <button onclick="openModal('Нарийн бичиг & Архивын ажилтан')" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Бүртгүүлэх</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Цахилгаанчин -->
+            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="technical">
+                <div class="relative h-52 overflow-hidden bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Цахилгаанчин" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">5. Техник</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Цахилгаанчин</h3>
+                        <p class="text-gray-600 text-sm mb-4">Барилга болон үйлдвэрийн цахилгаан монтаж, схем унших, аюулгүй ажиллагааны зэрэг олгоно.</p>
+                        
+                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 21 хоног</div>
+                            <div class="flex items-center"><i class="fa-solid fa-bolt text-brand-lightBlue mr-2 w-4"></i> Мэргэжлийн зэрэгтэй</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                        <button onclick="openCourseDetails(5)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                        <button onclick="openModal('Цахилгаанчин')" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Бүртгүүлэх</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Нярав -->
+            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="office">
+                <div class="relative h-52 overflow-hidden bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Нярав" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">6. Оффис</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Нярав / Агуулахын менежмент</h3>
+                        <p class="text-gray-600 text-sm mb-4">Агуулахын бүртгэл, эд хөрөнгийн тооллого, бараа материалын тайлан хөтлөлт, программ дээр ажиллах.</p>
+                        
+                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 10 хоног</div>
+                            <div class="flex items-center"><i class="fa-solid fa-boxes-stacked text-brand-lightBlue mr-2 w-4"></i> Программ систем хосолсон</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                        <button onclick="openCourseDetails(6)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                        <button onclick="openModal('Нярав')" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Бүртгүүлэх</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Гагнуурчин -->
+            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="technical">
+                <div class="relative h-52 overflow-hidden bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Гагнуурчин" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">7. Техник</span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-brand-blue mb-2">Гагнуурчин</h3>
+                        <p class="text-gray-600 text-sm mb-4">Цахилгаан ба хагас автомат (MIG/TIG) гагнуурын онол ба лабораторийн бодит дадлага сургалт.</p>
+                        
+                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 21 хоног</div>
+                            <div class="flex items-center"><i class="fa-solid fa-fire text-brand-lightBlue mr-2 w-4"></i> Аюулгүй байдлын үнэмлэх</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                        <button onclick="openCourseDetails(7)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                        <button onclick="openModal('Гагнуурчин')" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition">Бүртгүүлэх</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="advantages" class="bg-white py-16 lg:py-24 border-t border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold tracking-widest text-brand-lightBlue uppercase mb-2">Давуу Талууд</h2>
+                <p class="text-3xl font-black text-brand-blue">Яагаад Хөгжлийн Ундрага Академийг Сонгох Вэ?</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-brand-softBg hover:shadow-xl transition border border-gray-100">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-blue text-brand-gold flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">Албан ёсны Сертификат</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Төгсөгчдөд хөдөлмөрийн зах зээлд хүчин төгөлдөр үйлчлэх албан ёсны чадамжийн сертификат болон жолоодох эрхийн үнэмлэх олгоно.</p>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-brand-softBg hover:shadow-xl transition border border-gray-100">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-blue text-brand-gold flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-user-ninja"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">Туршлагатай Багш Нар</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Салбартаа олон жил ажилласан мастер, инженер багш нар онол ба бодит дадлагыг хослуулан зааж зөвлөнө.</p>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-brand-softBg hover:shadow-xl transition border border-gray-100">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-blue text-brand-gold flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-3">Ажилд Зуучлах Дэмжлэг</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Хамтран ажилладаг уул уурхай, барилга, аж ахуйн нэгж байгууллагуудад шууд ажилд зуучлах боломжийг бүрдүүлдэг.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATE CHECK SIMULATION -->
+    <section class="py-16 bg-brand-blue text-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <i class="fa-solid fa-graduation-cap text-5xl text-brand-gold mb-4 inline-block"></i>
+            <h2 class="text-2xl sm:text-3xl font-bold mb-3">Сертификат Баталгаажуулах</h2>
+            <p class="text-gray-300 text-sm mb-8 max-w-xl mx-auto">Академиас олгосон сертификатын дугаараар бүртгэлийг онлайнаар шалгах боломжтой.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-3 max-w-lg mx-auto">
+                <input type="text" id="certInput" placeholder="Сертификатын дугаар (жишээ нь: HUA-2024-089)" class="px-5 py-3.5 rounded-xl text-gray-800 focus:outline-none w-full shadow-inner">
+                <button onclick="checkCertificate()" class="bg-brand-gold hover:bg-yellow-500 text-brand-dark font-bold px-6 py-3.5 rounded-xl shadow-lg transition whitespace-nowrap">
+                    Шалгах
+                </button>
+            </div>
+            <div id="certResult" class="mt-4 text-sm font-semibold hidden"></div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-xs font-bold tracking-widest text-brand-lightBlue uppercase mb-2">Сэтгэгдэл</h2>
+            <p class="text-3xl font-black text-brand-blue">Төгсөгчдийн Сэтгэгдэл</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
+                <p class="text-gray-600 italic text-sm mb-6">"Экскаваторын сургалтад сууж төгсөөд шууд уул уурхайн компанид оператороор ажилд орсон. Дадлага ихтэй байсан нь их тустай байлаа."</p>
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-lightBlue text-white font-bold flex items-center justify-center">Б</div>
+                    <div>
+                        <div class="text-sm font-bold text-gray-800">Бат-Эрдэнэ</div>
+                        <div class="text-xs text-gray-500">Экскаватор оператор</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
+                <p class="text-gray-600 italic text-sm mb-6">"Нарийн бичиг архивын сургалтад сурснаар албан бичиг төлөвлөлт болон архивын стандартыг маш сайн эзэмшсэн. Багш нартаа баярлалаа!"</p>
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center">О</div>
+                    <div>
+                        <div class="text-sm font-bold text-gray-800">Оюунчимэг</div>
+                        <div class="text-xs text-gray-500">Нарийн бичиг & Архив</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
+                <p class="text-gray-600 italic text-sm mb-6">"Гагнуурын сургалтын лабораторийн тоног төхөөрөмж нь орчин үеийн, багш нар нь маш их зөвлөгөө өгч ажилласан. Ажилд гарахад бэлэн болсон."</p>
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center">Г</div>
+                    <div>
+                        <div class="text-sm font-bold text-gray-800">Ганзориг</div>
+                        <div class="text-xs text-gray-500">Мэргэшсэн Гагнуурчин</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="bg-brand-dark text-white py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div>
+                    <h2 class="text-xs font-bold tracking-widest text-brand-gold uppercase mb-2">Холбоо барих</h2>
+                    <h3 class="text-3xl font-black mb-6">Бидэнтэй Холбогдох</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-8">
+                        Сургалтын талаар тодруулах зүйл байвал доорх утаснуудаар шууд залгах эсвэл манай сургалтын төв дээр хүрэлцэн ирж уулзана уу.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-brand-gold text-xl flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase font-semibold">Утасны дугаар</div>
+                                <div class="text-xl font-bold text-white mt-1 space-x-4">
+                                    <a href="tel:99354112" class="hover:text-brand-gold transition">99354112</a>
+                                    <span>/</span>
+                                    <a href="tel:88194112" class="hover:text-brand-gold transition">88194112</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-brand-gold text-xl flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase font-semibold">Хаяг Байршил</div>
+                                <div class="text-base text-gray-200 mt-1">Улаанбаатар хот, Төв салбар, Сургалтын төв байр</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-brand-gold text-xl flex-shrink-0">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase font-semibold">Вэб сайт</div>
+                                <div class="text-base text-gray-200 mt-1">hugjliinundraga-academy.mn</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Call card -->
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-md">
+                    <div class="w-20 h-20 bg-brand-gold text-brand-dark rounded-full flex items-center justify-center text-3xl mx-auto mb-6 shadow-xl">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-2">Зөвлөгөө Мэдээлэл Авах</h4>
+                    <p class="text-gray-300 text-sm mb-6">Манай зөвлөх ажилтан таны асуултад шууд хариулахад бэлэн байна.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="tel:99354112" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-6 rounded-xl transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>99354112</span>
+                        </a>
+                        <a href="tel:88194112" class="bg-brand-lightBlue hover:bg-blue-500 text-white font-bold py-3.5 px-6 rounded-xl transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>88194112</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-gray-400 text-xs py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                &copy; 2026 Хөгжлийн Ундрага Академи. Бүх права хуулиар хамгаалагдсан.
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition">Нууцлалын бодлого</a>
+                <a href="#" class="hover:text-white transition">Үйлчилгээний нөхцөл</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- REGISTRATION MODAL -->
+    <div id="registrationModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-fade-in">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-bold focus:outline-none">&times;</button>
+            
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-brand-blue">Онлайн Бүртгэл</h3>
+                <p class="text-xs text-gray-500 mt-1">Хөгжлийн Ундрага Академийн мэргэжлийн сургалт</p>
+            </div>
+
+            <form id="modalForm" onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Овог Нэр *</label>
+                    <input type="text" required placeholder="Бүрэн нэрээ оруулна уу" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Утасны Дугаар *</label>
+                    <input type="tel" id="modalPhone" required placeholder="99XXXXXX" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Сонгох Сургалт *</label>
+                    <select id="modalCourseSelect" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none bg-white">
+                        <option value="">-- Сургалтаа сонгоно уу --</option>
+                        <option value="Ковш оператор">1. Ковш оператор</option>
+                        <option value="Экскаватор оператор">2. Экскаватор оператор</option>
+                        <option value="Дамп оператор">3. Дамп оператор</option>
+                        <option value="Нарийн бичиг & Архивын ажилтан">4. Нарийн бичгийн дарга & Архивын ажилтан</option>
+                        <option value="Цахилгаанчин">5. Цахилгаанчин</option>
+                        <option value="Нярав">6. Нярав</option>
+                        <option value="Гагнуурчин">7. Гагнуурчин</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Тэмдэглэл / Асуулт</label>
+                    <textarea rows="2" placeholder="Нэмэлт тайлбар (заавал биш)" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-brand-blue hover:bg-brand-lightBlue text-white font-bold py-3 rounded-xl shadow-md transition">
+                        БҮРТГҮҮЛЭХ ИЛГЭЭХ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- COURSE DETAILS MODAL -->
+    <div id="detailsModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative">
+            <button onclick="closeDetailsModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-bold focus:outline-none">&times;</button>
+            
+            <div id="detailsContent">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filter Courses
+        function filterCourses(category) {
+            const cards = document.querySelectorAll('.course-card');
+            const tabs = document.querySelectorAll('.course-tab');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-brand-blue', 'text-white');
+                tab.classList.add('bg-gray-200', 'text-gray-700');
+            });
+
+            event.currentTarget.classList.remove('bg-gray-200', 'text-gray-700');
+            event.currentTarget.classList.add('bg-brand-blue', 'text-white');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Functions
+        function openModal(courseName = '') {
+            const modal = document.getElementById('registrationModal');
+            const select = document.getElementById('modalCourseSelect');
+            if (courseName) {
+                select.value = courseName;
+            }
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('registrationModal').classList.add('hidden');
+        }
+
+        function handleQuickSubmit(e) {
+            e.preventDefault();
+            alert('Баярлалаа! Таны бүртгэлийн хүсэлтийг хүлээн авлаа. Манай ажилтан 99354112 эсвэл 88194112 дугаараас холбогдох болно.');
+            e.target.reset();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            alert('Бүртгэл амжилттай хийгдлээ! Манай сургалтын зөвлөх тун удахгүй холбогдоно.');
+            closeModal();
+            e.target.reset();
+        }
+
+        // Course details dynamic data
+        const courseData = {
+            1: {
+                title: '1. Ковш оператор',
+                desc: 'Ачигч буюу ковшийн аюулгүй ажиллагаа, жолоодлого, гидравлик болон техникийн үйлчилгээний иж бүрэн онол дадлага.',
+                items: ['Техникийн бүтэц, гидравлик систем', 'Хөдөлмөрийн аюулгүй байдал (ХАБЭА)', 'Бодит талбайн жолоодлогын дадлага', 'Мэргэжлийн үнэмлэх, зэрэг'],
+                duration: '2 - 4 долоо хоног'
+            },
+            2: {
+                title: '2. Экскаватор оператор',
+                desc: 'Уул уурхай, барилга, замын салбарын гол ухагч техник болох экскаваторын мэргэшсэн сургалт.',
+                items: ['Гинжит ба дугуйт экскаваторын онцлог', 'Ухлаг, шуудуу болон ачилтын техник', 'Аюулгүй ажиллагааны дүрэм', 'Мэргэжлийн эрхийн сертификат'],
+                duration: '2 - 4 долоо хоног'
+            },
+            3: {
+                title: '3. Дамп оператор',
+                desc: 'Уул уурхайн хүнд дацын дамп самосвал машины аюулгүй жолоодлого, ашиглалт, карьерийн замын хөдөлгөөн.',
+                items: ['Хүнд дацын автосамосвалын бүтэц', 'Карьер дахь аюулгүй хөдөлгөөн', 'Техникийн өдөр тутмын үзлэг', 'Ажилд зуучлах боломж'],
+                duration: '2 - 3 долоо хоног'
+            },
+            4: {
+                title: '4. Нарийн бичгийн дарга & Архивын ажилтан',
+                desc: 'Албан бичиг боловсруулалт, архивын нэгж үүсгэх, байгууллагын соёл, компьютерийн хэрэглээний хөтөлбөр.',
+                items: ['MNS 5140 стандартын дагуу бичиг баримт', 'Архивын хадгалалт, тоо бүртгэл', 'Оффисын харилцаа, ёс зүй', '10 хуруугаар хурдан бичих'],
+                duration: '14 хоног'
+            },
+            5: {
+                title: '5. Цахилгаанчин',
+                desc: 'Барилга болон үйлдвэрийн цахилгаан монтаж, схем унших, аюулгүй ажиллагааны зэрэг олгох сургалт.',
+                items: ['Цахилгаан хэлхээний схем унших', 'Монтаж, угсралт, тохируулга', 'Цахилгааны аюулгүй ажиллагаа', 'Зэрэг олгох сертификат'],
+                duration: '21 хоног'
+            },
+            6: {
+                title: '6. Нярав',
+                desc: 'Агуулахын бүртгэл, эд хөрөнгийн тооллого, бараа материалын тайлан хөтлөлт, санхүүгийн програм дээр ажиллах.',
+                items: ['Агуулахын бүртгэл, үлдэгдлийн хяналт', 'Бараа материалын тооллого хийх', 'Бүртгэлийн программ дээр ажиллах', 'Тайлан тооцоо гаргах'],
+                duration: '10 хоног'
+            },
+            7: {
+                title: '7. Гагнуурчин',
+                desc: 'Цахилгаан ба хагас автомат (MIG/MAG/TIG) гагнуурын онол ба лабораторийн бодит дадлага сургалт.',
+                items: ['Цахилгаан нуман ба хагас автомат гагнуур', 'Оёдол, залгаасны чанар шалгах', 'ХАБЭА болон хамгаалах хэрэгсэл', 'Мэргэжлийн үнэмлэх олгоно'],
+                duration: '21 хоног'
+            }
+        };
+
+        function openCourseDetails(id) {
+            const data = courseData[id];
+            if (!data) return;
+
+            const content = document.getElementById('detailsContent');
+            content.innerHTML = `
+                <h3 class="text-2xl font-bold text-brand-blue mb-3">${data.title}</h3>
+                <p class="text-gray-600 text-sm mb-4">${data.desc}</p>
+                
+                <div class="bg-gray-50 p-4 rounded-xl mb-4 border border-gray-200">
+                    <div class="text-xs font-bold text-gray-500 uppercase mb-2">Сургалтын агуулга:</div>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        ${data.items.map(item => `<li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> ${item}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="text-xs text-gray-500 mb-6 font-semibold">
+                    <i class="fa-regular fa-clock text-brand-lightBlue mr-1"></i> Хугацаа: ${data.duration}
+                </div>
+
+                <div class="flex gap-3">
+                    <button onclick="closeDetailsModal(); openModal('${data.title}')" class="flex-1 bg-brand-blue hover:bg-brand-lightBlue text-white font-bold py-3 rounded-xl transition">
+                        Энэ сургалтад бүртгүүлэх
+                    </button>
+                    <button onclick="closeDetailsModal()" class="px-5 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-xl transition">
+                        Хаах
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('detailsModal').classList.remove('hidden');
+        }
+
+        function closeDetailsModal() {
+            document.getElementById('detailsModal').classList.add('hidden');
+        }
+
+        // Certificate Checker Simulation
+        function checkCertificate() {
+            const val = document.getElementById('certInput').value.trim();
+            const res = document.getElementById('certResult');
+            res.classList.remove('hidden');
+
+            if (!val) {
+                res.className = "mt-4 text-sm font-semibold text-amber-300";
+                res.innerText = "Сертификатын дугаараа оруулна уу.";
+                return;
+            }
+
+            res.className = "mt-4 text-sm font-semibold text-emerald-400";
+            res.innerHTML = `<i class="fa-solid fa-circle-check"></i> Баталгаажсан: "${val}" дугаартай сертификат Хөгжлийн Ундрага Академийн сан дотор бүртгэлтэй байна.`;
+        }
+    </script>
+</body>
+</html>
