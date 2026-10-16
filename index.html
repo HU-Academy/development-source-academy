@@ -171,42 +171,48 @@
                     </div>
                 </div>
 
-                <!-- Hero Form / Highlights Box -->
-                <div class="lg:col-span-5">
-                    <div class="bg-white/95 backdrop-blur-lg rounded-2xl p-6 sm:p-8 text-gray-800 shadow-2xl border border-white/40">
-                        <h3 class="text-2xl font-bold text-brand-blue mb-2">Хурдан Бүртгэл</h3>
-                        <p class="text-sm text-gray-600 mb-6">Сонирхож буй сургалтаа сонгон мэдээллээ үлдээгээрэй.</p>
+               <!-- Hero Form / Highlights Box -->
+<div class="lg:col-span-5">
+    <div class="bg-white/95 backdrop-blur-lg rounded-2xl p-6 sm:p-8 text-gray-800 shadow-2xl border border-white/40">
+        <h3 class="text-2xl font-bold text-brand-blue mb-2">Хурдан Бүртгэл</h3>
+        <p class="text-sm text-gray-600 mb-6">Сонирхож буй сургалтаа сонгон мэдээллээ үлдээгээрэй.</p>
 
-                        <form id="heroQuickForm" onsubmit="handleQuickSubmit(event)" class="space-y-4">
-                            <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Таны Нэр</label>
-                                <input type="text" required placeholder="Овог Нэр" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Утасны Дугаар</label>
-                                <input type="tel" required placeholder="99XXXXXX" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Мэргэжил сонгох</label>
-                                <select required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none bg-white">
-                                    <option value="">-- Мэргэжил сонгоно уу --</option>
-                                    <option>1. Ковш оператор</option>
-                                    <option>2. Экскаватор оператор</option>
-                                    <option>3. Дамп оператор</option>
-                                    <option>4. Нарийн бичгийн дарга & Архивын ажилтан</option>
-                                    <option>5. Цахилгаанчин</option>
-                                    <option>6. Нярав</option>
-                                    <option>7. Гагнуурчин</option>
-                                </select><!-- Оршин суугаа хот, аймаг, сум оруулах хэсэг -->
-<div class="mt-4">
-    <label class="block text-gray-700 font-medium mb-2">Оршин суугаа хот, аймаг, сум</label>
-    <input type="text" name="location" placeholder="Жишээ нь: Орхон аймаг, Баян-Өндөр сум" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-</div>
-                            </div>
-                            <button type="submit" class="w-full bg-brand-gold hover:bg-yellow-500 text-brand-dark font-black py-3.5 rounded-lg shadow-md transition transform active:scale-98">
-                                СУРГАЛТАД БҮРТГҮҮЛЭХ
-                            </button>
-                        </form>
+        <!-- Formspree холбоос болон method="POST" нэмэгдсэн хэсэг -->
+        <form action="https://formspree.io/f/mbgdqala" method="POST" class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Таны Нэр</label>
+                <!-- name="name" нэмэгдсэн -->
+                <input type="text" name="name" required placeholder="Овог Нэр" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none">
+            </div>
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Утасны Дугаар</label>
+                <!-- name="phone" нэмэгдсэн -->
+                <input type="tel" name="phone" required placeholder="99XXXXXX" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none">
+            </div>
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Мэргэжил сонгох</label>
+                <!-- name="course" нэмэгдсэн -->
+                <select name="course" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none bg-white">
+                    <option value="">-- Мэргэжил сонгоно уу --</option>
+                    <option value="Ковш оператор">1. Ковш оператор</option>
+                    <option value="Экскаватор оператор">2. Экскаватор оператор</option>
+                    <option value="Дамп оператор">3. Дамп оператор</option>
+                    <option value="Нарийн бичгийн дарга & Архивын ажилтан">4. Нарийн бичгийн дарга & Архивын ажилтан</option>
+                    <option value="Цахилгаанчин">5. Цахилгаанчин</option>
+                    <option value="Нярав">6. Нярав</option>
+                    <option value="Гагнуурчин">7. Гагнуурчин</option>
+                </select>
+            </div>
+            <div class="mt-4">
+                <label class="block text-gray-700 font-medium mb-2 text-xs font-bold uppercase tracking-wider">Оршин суугаа хот, аймаг, сум</label>
+                <!-- name="location" хэвээрээ байна -->
+                <input type="text" name="location" placeholder="Жишээ нь: Орхон аймаг, Баян-Өндөр сум" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-lightBlue">
+            </div>
+            
+            <button type="submit" class="w-full bg-brand-gold hover:bg-yellow-500 text-brand-dark font-black py-3.5 rounded-lg shadow-md transition transform active:scale-98">
+                СУРГАЛТАД БҮРТГҮҮЛЭХ
+            </button>
+        </form>
                     </div>
                 </div>
 
