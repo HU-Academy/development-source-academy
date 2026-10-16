@@ -497,50 +497,63 @@
             </div>
             <div id="certResult" class="mt-4 text-sm font-semibold hidden"></div>
         </div>
-    </section>
-
-    <!-- REVIEWS -->
-    <section id="reviews" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-            <h2 class="text-xs font-bold tracking-widest text-brand-lightBlue uppercase mb-2">Сэтгэгдэл</h2>
-            <p class="text-3xl font-black text-brand-blue">Төгсөгчдийн Сэтгэгдэл</p>
+   <!-- СУРГАЛТЫН ЗАР SECTION -->
+<section id="announcements" class="py-16 bg-gradient-to-br from-amber-50 to-orange-50 border-y border-amber-200/60">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Гарчиг -->
+        <div class="text-center mb-10">
+            <span class="inline-block bg-amber-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md uppercase tracking-wider mb-3">
+                📢 Шинэ Элсэлт
+            </span>
+            <h2 class="text-3xl font-extrabold text-brand-blue tracking-tight">Сургалтын Зар</h2>
+            <p class="text-gray-600 mt-2 text-sm sm:text-base">Та бүхнийг дараах мэргэшүүлэх сургалтанд урьж байна</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
-                <p class="text-gray-600 italic text-sm mb-6">"Экскаваторын сургалтад сууж төгсөөд шууд уул уурхайн компанид оператороор ажилд орсон. Дадлага ихтэй байсан нь их тустай байлаа."</p>
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-full bg-brand-lightBlue text-white font-bold flex items-center justify-center">Б</div>
-                    <div>
-                        <div class="text-sm font-bold text-gray-800">Бат-Эрдэнэ</div>
-                        <div class="text-xs text-gray-500">Экскаватор оператор</div>
-                    </div>
+        <!-- Зарлалын карт -->
+        <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-amber-100 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-amber-400/10 rounded-full blur-2xl"></div>
+
+            <div class="space-y-4 max-w-xl">
+                <div class="flex items-center space-x-2 text-amber-600 font-bold text-sm">
+                    <i class="fa-solid fa-calendar-days text-lg"></i>
+                    <span>Эхлэх хугацаа: 2026 оны 11-р сарын 01</span>
                 </div>
+                
+                <h3 class="text-2xl font-bold text-gray-800 leading-snug">
+                    11-р сарын 1-нд эхлэх мэргэшүүлэх сургалт:
+                </h3>
+
+                <!-- Энд өөрийнхөө нэмж бичихийг хүссэн дэлгэрэнгүй зарын текстээ бичиж болно -->
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Манай академи нь чадварлаг багш нар, бодит дадлага хосолсон хөтөлбөрөөр мэргэжил эзэмшүүлэх сургалтдаа тогтмол элсэлт авч байна. Амжилттай төгсөгчдөд албан ёсны эрх олгоно.
+                </p>
+
+                <ul class="space-y-3 pt-2 text-gray-700 font-medium">
+                    <li class="flex items-center space-x-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                        <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">1</span>
+                        <span class="text-lg text-brand-blue font-bold">Цахилгаанчин</span>
+                    </li>
+                    <li class="flex items-center space-x-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                        <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">2</span>
+                        <span class="text-lg text-brand-blue font-bold">Гагнуурчин</span>
+                    </li>
+                </ul>
             </div>
 
-            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
-                <p class="text-gray-600 italic text-sm mb-6">"Нарийн бичиг архивын сургалтад сурснаар албан бичиг төлөвлөлт болон архивын стандартыг маш сайн эзэмшсэн. Багш нартаа баярлалаа!"</p>
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center">О</div>
-                    <div>
-                        <div class="text-sm font-bold text-gray-800">Оюунчимэг</div>
-                        <div class="text-xs text-gray-500">Нарийн бичиг & Архив</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
-                <p class="text-gray-600 italic text-sm mb-6">"Гагнуурын сургалтын лабораторийн тоног төхөөрөмж нь орчин үеийн, багш нар нь маш их зөвлөгөө өгч ажилласан. Ажилд гарахад бэлэн болсон."</p>
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center">Г</div>
-                    <div>
-                        <div class="text-sm font-bold text-gray-800">Ганзориг</div>
-                        <div class="text-xs text-gray-500">Мэргэшсэн Гагнуурчин</div>
-                    </div>
-                </div>
+            <!-- Бүртгүүлэх товчлуурууд -->
+            <div class="w-full md:w-auto flex flex-col gap-3 min-w-[220px]">
+                <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Цахилгаанчин';" class="w-full bg-brand-blue hover:bg-brand-lightBlue text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition text-center flex items-center justify-center space-x-2">
+                    <span>Цахилгаанчинд бүртгүүлэх</span>
+                </a>
+                <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Гагнуурчин';" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition text-center flex items-center justify-center space-x-2">
+                    <span>Гагнуурчинд бүртгүүлэх</span>
+                </a>
             </div>
         </div>
-    </section>
+
+    </div>
+</section>
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="bg-brand-dark text-white py-16 lg:py-24">
