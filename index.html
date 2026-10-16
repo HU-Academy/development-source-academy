@@ -278,173 +278,172 @@
         <!-- Course Cards Grid -->
         <div id="courseGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- 1. Ковш -->
-            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="heavy">
-                <div class="relative h-52 overflow-hidden bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="Ковш" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">1. Хүнд машин</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-brand-blue mb-2">Ковш оператор</h3>
-                        <p class="text-gray-600 text-sm mb-4">Ачигч буюу ковшийн аюулгүй ажиллагаа, жолоодлого, техникийн үйлчилгээний иж бүрэн онол дадлага.</p>
-                        
-                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
-                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
-                            <div class="flex items-center"><i class="fa-solid fa-gears text-brand-lightBlue mr-2 w-4"></i> Олгох эрх: Жолоодох эрхийн үнэмлэх</div>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
-    <button onclick="openCourseDetails(1)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
-    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Ковш оператор';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
-</div>
-                </div>
+          <!-- 1. Ковш -->
+        <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="heavy">
+            <div class="relative h-52 overflow-hidden bg-gray-100">
+                <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="Ковш" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">1. Хүнд машин</span>
             </div>
-
-            <!-- 2. Экскаватор -->
-            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="heavy">
-                <div class="relative h-52 overflow-hidden bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=800&q=80" alt="Экскаватор" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">2. Хүнд машин</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-brand-blue mb-2">Экскаватор оператор</h3>
-                        <p class="text-gray-600 text-sm mb-4">Уул уурхай, барилгын салбарын гол ухагч техник болох экскаваторын мэргэшсэн сургалт.</p>
-                        
-                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
-                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
-                            <div class="flex items-center"><i class="fa-solid fa-gears text-brand-lightBlue mr-2 w-4"></i> Дадлага: Бодит техник дээр</div>
-                        </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Ковш оператор</h3>
+                    <p class="text-gray-600 text-sm mb-4">Ачигч буюу ковшийн аюулгүй ажиллагаа, жолоодлого, техникийн үйлчилгээний иж бүрэн онол дадлага.</p>
+                    
+                    <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                        <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
+                        <div class="flex items-center"><i class="fa-solid fa-gears text-brand-lightBlue mr-2 w-4"></i> Олгох эрх: Жолоодох эрхийн үнэмлэх</div>
                     </div>
-
-                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
-    <button onclick="openCourseDetails(2)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
-    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Экскаватор оператор';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
-</div>
                 </div>
-            </div>
 
-            <!-- 3. Дамп -->
-            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="heavy">
-                <div class="relative h-52 overflow-hidden bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Дамп" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">3. Хүнд машин</span>
+                <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
+                    <button onclick="openCourseDetails(1)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Ковш оператор';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-brand-blue mb-2">Дамп оператор</h3>
-                        <p class="text-gray-600 text-sm mb-4">Уул уурхайн хүнд дацын дамп самосвал машины аюулгүй жолоодлого, ашиглалтын сургалт.</p>
-                        
-                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
-                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
-                            <div class="flex items-center"><i class="fa-solid fa-truck text-brand-lightBlue mr-2 w-4"></i> Уул уурхайн бэлтгэл</div>
-                        </div>
-                    </div>
-
-                   <div class="flex items-center justify-between border-t border-gray-100 pt-4">
-    <button onclick="openCourseDetails(3)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
-    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Дамп оператор';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
-</div>
-                </div>
-            </div>
-
-            <!-- 4. Нарийн бичгийн дарга & Архивын ажилтан -->
-           <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="office">
-    <div class="relative h-52 overflow-hidden bg-gray-100">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Нарийн бичиг" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-        <span class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">4. Оффис</span>
-    </div>
-    <div class="p-6 flex-1 flex flex-col justify-between">
-        <div>
-            <h3 class="text-xl font-bold text-brand-blue mb-2">Нарийн бичиг & Архив</h3>
-            <p class="text-gray-600 text-sm mb-4">Албан бичиг боловсруулалт, архивын хөтлөлт, байгууллагын соёл, компьютерийн хэрэглээ.</p>
-            
-            <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
-                <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
-                <div class="flex items-center"><i class="fa-solid fa-file-contract text-brand-lightBlue mr-2 w-4"></i> MNS стандартын дагуу</div>
             </div>
         </div>
 
-        <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
-            <button onclick="openCourseDetails(4)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
-            <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Нарийн бичиг & Архив';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
+        <!-- 2. Экскаватор -->
+        <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="heavy">
+            <div class="relative h-52 overflow-hidden bg-gray-100">
+                <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=800&q=80" alt="Экскаватор" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">2. Хүнд машин</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Экскаватор оператор</h3>
+                    <p class="text-gray-600 text-sm mb-4">Уул уурхай, барилгын салбарын гол ухагч техник болох экскаваторын мэргэшсэн сургалт.</p>
+                    
+                    <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                        <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
+                        <div class="flex items-center"><i class="fa-solid fa-gears text-brand-lightBlue mr-2 w-4"></i> Дадлага: Бодит техник дээр</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
+                    <button onclick="openCourseDetails(2)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Экскаватор оператор';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-            <!-- 5. Цахилгаанчин -->
-            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="technical">
-                <div class="relative h-52 overflow-hidden bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Цахилгаанчин" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">5. Техник</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-brand-blue mb-2">Цахилгаанчин</h3>
-                        <p class="text-gray-600 text-sm mb-4">Барилга болон үйлдвэрийн цахилгаан монтаж, схем унших, аюулгүй ажиллагааны зэрэг олгоно.</p>
-                        
-                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
-                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
-                            <div class="flex items-center"><i class="fa-solid fa-bolt text-brand-lightBlue mr-2 w-4"></i> Мэргэжлийн зэрэгтэй</div>
-                        </div>
+        <!-- 3. Дамп -->
+        <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="heavy">
+            <div class="relative h-52 overflow-hidden bg-gray-100">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Дамп" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">3. Хүнд машин</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Дамп оператор</h3>
+                    <p class="text-gray-600 text-sm mb-4">Уул уурхайн хүнд дацын дамп самосвал машины аюулгүй жолоодлого, ашиглалтын сургалт.</p>
+                    
+                    <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                        <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
+                        <div class="flex items-center"><i class="fa-solid fa-truck text-brand-lightBlue mr-2 w-4"></i> Уул уурхайн бэлтгэл</div>
                     </div>
+                </div>
 
-                  <div class="flex items-center justify-between border-t border-gray-100 pt-4">
-    <button onclick="openCourseDetails(5)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
-    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Цахилгаанчин';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
+                <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
+                    <button onclick="openCourseDetails(3)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Дамп оператор';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
                 </div>
             </div>
+        </div>
 
-            <!-- 6. Нярав -->
-            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="office">
-                <div class="relative h-52 overflow-hidden bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Нярав" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">6. Оффис</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-brand-blue mb-2">Нярав / Агуулахын менежмент</h3>
-                        <p class="text-gray-600 text-sm mb-4">Агуулахын бүртгэл, эд хөрөнгийн тооллого, бараа материалын тайлан хөтлөлт, программ дээр ажиллах.</p>
-                        
-                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
-                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 10 хоног</div>
-                            <div class="flex items-center"><i class="fa-solid fa-boxes-stacked text-brand-lightBlue mr-2 w-4"></i> Программ систем хосолсон</div>
-                        </div>
+        <!-- 4. Нарийн бичгийн дарга & Архивын ажилтан -->
+        <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="office">
+            <div class="relative h-52 overflow-hidden bg-gray-100">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Нарийн бичиг" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                <span class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">4. Оффис</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Нарийн бичиг & Архив</h3>
+                    <p class="text-gray-600 text-sm mb-4">Албан бичиг боловсруулалт, архивын хөтлөлт, байгууллагын соёл, компьютерийн хэрэглээ.</p>
+                    
+                    <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                        <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
+                        <div class="flex items-center"><i class="fa-solid fa-file-contract text-brand-lightBlue mr-2 w-4"></i> MNS стандартын дагуу</div>
                     </div>
+                </div>
 
-                  <div class="flex items-center justify-between border-t border-gray-100 pt-4">
-    <button onclick="openCourseDetails(6)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
-    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Нярав';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
-</div>
+                <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
+                    <button onclick="openCourseDetails(4)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Нарийн бичиг & Архив';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
                 </div>
             </div>
+        </div>
 
-            <!-- 7. Гагнуурчин -->
-            <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="technical">
-                <div class="relative h-52 overflow-hidden bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Гагнуурчин" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                    <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">7. Техник</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-brand-blue mb-2">Гагнуурчин</h3>
-                        <p class="text-gray-600 text-sm mb-4">Цахилгаан ба хагас автомат (MIG/TIG) гагнуурын онол ба лабораторийн бодит дадлага сургалт.</p>
-                        
-                        <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
-                            <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
-                            <div class="flex items-center"><i class="fa-solid fa-fire text-brand-lightBlue mr-2 w-4"></i> Аюулгүй байдлын үнэмлэх</div>
-                        </div>
+        <!-- 5. Цахилгаанчин -->
+        <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="technical">
+            <div class="relative h-52 overflow-hidden bg-gray-100">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Цахилгаанчин" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">5. Техник</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Цахилгаанчин</h3>
+                    <p class="text-gray-600 text-sm mb-4">Барилга болон үйлдвэрийн цахилгаан монтаж, схем унших, аюулгүй ажиллагааны зэрэг олгоно.</p>
+                    
+                    <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                        <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
+                        <div class="flex items-center"><i class="fa-solid fa-bolt text-brand-lightBlue mr-2 w-4"></i> Мэргэжлийн зэрэгтэй</div>
                     </div>
+                </div>
 
-                   <div class="flex items-center justify-between border-t border-gray-100 pt-4">
-    <button onclick="openCourseDetails(7)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
-    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Гагнуурчин';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
-</div>
+                <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
+                    <button onclick="openCourseDetails(5)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Цахилгаанчин';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
                 </div>
             </div>
+        </div>
 
+        <!-- 6. Нярав -->
+        <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="office">
+            <div class="relative h-52 overflow-hidden bg-gray-100">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Нярав" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                <span class="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">6. Оффис</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Нярав / Агуулахын менежмент</h3>
+                    <p class="text-gray-600 text-sm mb-4">Агуулахын бүртгэл, эд хөрөнгийн тооллого, бараа материалын тайлан хөтлөлт, программ дээр ажиллах.</p>
+                    
+                    <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                        <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 10 хоног</div>
+                        <div class="flex items-center"><i class="fa-solid fa-boxes-stacked text-brand-lightBlue mr-2 w-4"></i> Программ систем хосолсон</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
+                    <button onclick="openCourseDetails(6)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Нярав';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Гагнуурчин -->
+        <div class="course-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition border border-gray-100 flex flex-col" data-category="technical">
+            <div class="relative h-52 overflow-hidden bg-gray-100">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Гагнуурчин" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.0 rounded-full shadow">7. Техник</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Гагнуурчин</h3>
+                    <p class="text-gray-600 text-sm mb-4">Цахилгаан ба хагас автомат (MIG/TIG) гагнуурын онол ба лабораторийн бодит дадлага сургалт.</p>
+                    
+                    <div class="space-y-2 mb-6 text-xs text-gray-500 font-medium">
+                        <div class="flex items-center"><i class="fa-regular fa-clock text-brand-lightBlue mr-2 w-4"></i> Хугацаа: 14 хоног</div>
+                        <div class="flex items-center"><i class="fa-solid fa-fire text-brand-lightBlue mr-2 w-4"></i> Аюулгүй байдлын үнэмлэх</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
+                    <button onclick="openCourseDetails(7)" class="text-brand-lightBlue font-bold text-sm hover:underline">Дэлгэрэнгүй</button>
+                    <a href="#register-form" onclick="document.querySelector('select[name=\'course\']').value='Гагнуурчин';" class="bg-brand-blue hover:bg-brand-lightBlue text-white text-sm font-semibold px-4 py-2 rounded-lg transition text-center">Бүртгүүлэх</a>
+                </div>
+            </div>
         </div>
     </section>
 
