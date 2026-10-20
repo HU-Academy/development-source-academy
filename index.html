@@ -96,7 +96,23 @@
                     <span>Бүртгүүлэх</span>
                 </button>
             </div>
+<!-- Call to action button & Facebook Share -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <!-- 1. Бүртгүүлэх товч -->
+                <button onclick="openModal()" class="bg-brand-blue hover:bg-brand-lightBlue text-white font-semibold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>Бүртгүүлэх</span>
+                </button>
 
+                <!-- 2. Facebook Share товч (Лайк, Хуваалцах зориулалттай) -->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://hu-academy.github.io/development-source-academy/" 
+                   target="_blank" 
+                   class="bg-[#1877F2] hover:bg-blue-600 text-white font-semibold px-4 py-2.5 rounded-xl shadow-md transition flex items-center space-x-2"
+                   title="Facebook дээр хуваалцах">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <span>Хуваалцах</span>
+                </a>
+            </div>
             <!-- Mobile Menu Button -->
             <button id="mobileMenuBtn" class="lg:hidden text-gray-700 hover:text-brand-blue text-2xl focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
