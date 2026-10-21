@@ -939,22 +939,22 @@
             document.getElementById('detailsModal').classList.add('hidden');
         }
 
-        // Certificate Checker Simulation
-        function checkCertificate() {
-            const val = document.getElementById('certInput').value.trim();
-            const res = document.getElementById('certResult');
-            res.classList.remove('hidden');
+       // Certificate Checker Simulation
+    function checkCertificate() {
+        const val = document.getElementById('certInput').value.trim();
+        const res = document.getElementById('certResult');
+        res.classList.remove('hidden');
 
-            if (!val) {
-                res.className = "mt-4 text-sm font-semibold text-amber-300";
-                res.innerText = "Сертификатын дугаараа оруулна уу.";
-                return;
-            }
-
-            res.className = "mt-4 text-sm font-semibold text-emerald-400";
-            res.innerHTML = `<i class="fa-solid fa-circle-check"></i> Баталгаажсан: "${val}" дугаартай сертификат Хөгжлийн Ундрага Академийн сан дотор бүртгэлтэй байна.`;
+        if (!val) {
+            res.className = "mt-4 text-sm font-semibold text-amber-300";
+            res.innerText = "Сертификатын дугаараа оруулна уу.";
+            return;
         }
-    <script>
+
+        res.className = "mt-4 text-sm font-semibold text-emerald-400";
+        res.innerHTML = `<i class="fa-solid fa-circle-check"></i> Баталгаажсан: "${val}" дугаартай сертификат Хөгжлийн Ундрага Академийн сан дотор бүртгэлтэй байна.`;
+    }
+<script>
 function checkCertificate() {
     let certInput = document.getElementById("certInput");
     let resultDiv = document.getElementById("certResult");
