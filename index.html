@@ -968,7 +968,7 @@ function checkCertificate() {
     resultDiv.classList.remove("hidden");
     resultDiv.innerHTML = "<span class='text-white'>Хайж байна...</span>";
     
-    let scriptURL = "https://script.google.com/macros/s/AKfycbwu3UtvYYfSm5CB50rTCYEI1rYk1FzQbp6C_SiVHJKC1yEA2Y-CmmSY4Tn98vE_MGM7sQ/exec"; 
+    let scriptURL = "https://script.google.com/macros/s/AKfycbwu3UtvYYfSm5CB50rTCYEI1rYk1FzQbp6C_SiVHJKC1yEA2Y-CmmSY4Tn98vE_MGM7sQ/exec";
     
     fetch(scriptURL + "?certNo=" + encodeURIComponent(certNo))
         .then(response => response.json())
