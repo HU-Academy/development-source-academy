@@ -592,6 +592,36 @@
 
     </div>
        </section>
+        <!-- ===== ХӨГЖЛИЙН УНДРАГА АКАДЕМИ: СЕРТИФИКАТ ШАЛГАХ ===== -->
+<section id="hua-cert">
+  <div class="hua-cert-card">
+    <div class="hua-cert-icon" aria-hidden="true">✓</div>
+
+    <h3>Сертификат шалгах</h3>
+    <p class="hua-cert-desc">
+      Хөгжлийн Ундрага Академиас олгосон сертификатын
+      дугаарыг оруулж баталгаажуулна уу.
+    </p>
+
+    <form id="huaCertForm">
+      <label for="huaCertInput">Сертификатын дугаар</label>
+
+      <div class="hua-cert-controls">
+        <input
+          id="huaCertInput"
+          type="text"
+          placeholder="HUA-2026-1201"
+          autocomplete="off"
+          required
+        >
+        <button id="huaCertButton" type="submit">Шалгах</button>
+      </div>
+    </form>
+
+    <div id="huaCertResult" role="status"
+         aria-live="polite" hidden></div>
+  </div>
+</section>
     <!-- CONTACT SECTION -->
 <section id="contact" class="bg-brand-dark text-white py-16 lg:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -930,38 +960,6 @@
             document.getElementById('detailsModal').classList.add('hidden');
         }
 </script>
-
-<!-- ===== ХӨГЖЛИЙН УНДРАГА АКАДЕМИ: СЕРТИФИКАТ ШАЛГАХ ===== -->
-<section id="hua-cert">
-  <div class="hua-cert-card">
-    <div class="hua-cert-icon" aria-hidden="true">✓</div>
-
-    <h3>Сертификат шалгах</h3>
-    <p class="hua-cert-desc">
-      Хөгжлийн Ундрага Академиас олгосон сертификатын
-      дугаарыг оруулж баталгаажуулна уу.
-    </p>
-
-    <form id="huaCertForm">
-      <label for="huaCertInput">Сертификатын дугаар</label>
-
-      <div class="hua-cert-controls">
-        <input
-          id="huaCertInput"
-          type="text"
-          placeholder="HUA-2026-1201"
-          autocomplete="off"
-          required
-        >
-        <button id="huaCertButton" type="submit">Шалгах</button>
-      </div>
-    </form>
-
-    <div id="huaCertResult" role="status"
-         aria-live="polite" hidden></div>
-  </div>
-</section>
-
 <style>
 #hua-cert {
   box-sizing: border-box;
