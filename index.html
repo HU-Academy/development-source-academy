@@ -959,7 +959,7 @@
             <button onclick="checkCertificate()" style="padding: 10px 20px; background-color: #f59e0b; color: #0f172a; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 13px;">Шалгах</button>
         </div>
 
-        <div id="certResult" class="hidden" style="margin-top: 15px;"></div>
+        <div id="certResult" style="display: none; margin-top: 15px;"></div>
     </div>
 </div>
 
@@ -975,7 +975,7 @@
             return;
         }
         
-        resultDiv.classList.remove("hidden");
+        resultDiv.style.display = "block";
         resultDiv.innerHTML = "<span style='color: #94a3b8; font-size: 13px;'>Хайж байна...</span>";
         
         let scriptURL = "https://script.google.com/macros/s/AKfycbwu3UtvYYfSm5CB50rTCYEI1rYk1FzQbp6C_SiVHJKC1yEA2Y-CmmSY4Tn98vE_MGM7sQ/exec";
@@ -983,7 +983,7 @@
         fetch(scriptURL + "?certNo=" + encodeURIComponent(certNo))
             .then(response => response.json())
             .then(data => {
-                resultDiv.classList.remove("hidden");
+                resultDiv.style.display = "block";
                 if (data.status === "success") {
                     resultDiv.innerHTML = `
                         <div style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 12px; border-radius: 10px; text-align: left; margin-top: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 13px;">
@@ -1004,11 +1004,10 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                resultDiv.classList.remove("hidden");
+                resultDiv.style.display = "block";
                 resultDiv.innerHTML = "<p style='color: #ffcccc; font-size: 13px;'>Холбогдоход алдаа гарлаа. Дахин оролдоно уу.</p>";
             });
     }
 </script>
 </body>
 </html>
-
