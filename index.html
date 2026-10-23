@@ -946,69 +946,306 @@
         function closeDetailsModal() {
             document.getElementById('detailsModal').classList.add('hidden');
         }
-<!-- === 1. СЕРТИФИКАТ ШАЛГАХ ФОРМ (HTML) === -->
-<div style="background-color: #0b132b; padding: 40px 20px; display: flex; justify-content: center; width: 100%; box-sizing: border-box;">
-    <div style="background: #1c2541; border: 1px solid #3a506b; border-radius: 16px; padding: 25px; max-width: 420px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-align: center; box-sizing: border-box;">
-        
-        <div style="font-size: 26px; margin-bottom: 6px;">🎓</div>
-        <h3 style="color: #ffffff; font-size: 18px; font-weight: bold; margin: 0 0 6px 0;">Сертификат Баталгаажуулах</h3>
-        <p style="color: #94a3b8; font-size: 13px; margin: 0 0 16px 0;">Академиас олгосон сертификатын дугаараар шалгах боломжтой.</p>
-        
-        <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
-            <input type="text" id="certInput" placeholder="Жишээ: HUA-2024-08" style="flex: 1; min-width: 180px; padding: 10px 14px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #fff; outline: none; font-size: 13px;">
-            <button onclick="checkCertificate()" style="padding: 10px 20px; background-color: #f59e0b; color: #0f172a; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 13px;">Шалгах</button>
-        </div>
 
-        <div id="certResult" class="hidden" style="margin-top: 15px;"></div>
-    </div>
-</div>
+<!-- ===== ХӨГЖЛИЙН УНДРАГА АКАДЕМИ: СЕРТИФИКАТ ШАЛГАХ ===== -->
 
-<!-- === 2. СРИПТ ХЭСЭГ (JavaScript) === -->
+<section id="hua-cert">
+  <div class="hua-cert-card">
+    <div class="hua-cert-icon" aria-hidden="true">✓</div>
+
+    <h3>Сертификат шалгах</h3>
+    <p class="hua-cert-desc">
+      Хөгжлийн Ундрага Академиас олгосон сертификатын
+      дугаарыг оруулж баталгаажуулна уу.
+    </p>
+
+    <form id="huaCertForm">
+      <label for="huaCertInput">Сертификатын дугаар</label>
+
+      <div class="hua-cert-controls">
+        <input
+          id="huaCertInput"
+          type="text"
+          placeholder="HUA-2026-1201"
+          autocomplete="off"
+          required
+        >
+        <button id="huaCertButton" type="submit">Шалгах</button>
+      </div>
+    </form>
+
+    <div id="huaCertResult" role="status"
+         aria-live="polite" hidden></div>
+  </div>
+</section>
+
+<style>
+#hua-cert {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 24px 14px;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+#hua-cert * {
+  box-sizing: border-box;
+}
+
+#hua-cert .hua-cert-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 23px;
+  background: #fff;
+  border: 1px solid #dce5f0;
+  border-radius: 13px;
+  box-shadow: 0 5px 22px rgba(23, 54, 93, .09);
+  text-align: center;
+}
+
+#hua-cert .hua-cert-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: #eaf2ff;
+  color: #174b86;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#hua-cert h3 {
+  margin: 0 0 8px;
+  color: #17365d;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+#hua-cert .hua-cert-desc {
+  margin: 0 0 19px;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+#hua-cert label {
+  display: block;
+  margin-bottom: 7px;
+  color: #344054;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: left;
+}
+
+#hua-cert .hua-cert-controls {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+#hua-cert input {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: #fff;
+  color: #172b4d;
+  font-size: 14px;
+  outline: none;
+}
+
+#hua-cert input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .1);
+}
+
+#hua-cert button {
+  padding: 11px 17px;
+  border: none;
+  border-radius: 7px;
+  background: #f4b323;
+  color: #17365d;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+#hua-cert button:hover {
+  background: #e7a514;
+}
+
+#hua-cert button:disabled {
+  opacity: .65;
+  cursor: wait;
+}
+
+#hua-cert #huaCertResult[hidden] {
+  display: none !important;
+}
+
+#hua-cert #huaCertResult {
+  margin-top: 15px;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+#hua-cert .hua-cert-success,
+#hua-cert .hua-cert-error,
+#hua-cert .hua-cert-loading {
+  padding: 13px;
+  border-radius: 8px;
+}
+
+#hua-cert .hua-cert-success {
+  color: #166534;
+  background: #ecfdf3;
+  border: 1px solid #bbf7d0;
+}
+
+#hua-cert .hua-cert-error {
+  color: #9f1239;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+}
+
+#hua-cert .hua-cert-loading {
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+#hua-cert .hua-cert-success p {
+  margin: 4px 0;
+}
+
+@media (max-width: 380px) {
+  #hua-cert .hua-cert-card {
+    padding: 17px;
+  }
+
+  #hua-cert .hua-cert-controls {
+    flex-direction: column;
+  }
+
+  #hua-cert button {
+    width: 100%;
+  }
+}
+</style>
+
 <script>
-    // Google Sheets-тэй холбогдох сертификат шалгах функц
-    function checkCertificate() {
-        let certInput = document.getElementById("certInput");
-        let resultDiv = document.getElementById("certResult");
-        let certNo = certInput.value.trim();
-        
-        if(!certNo) {
-            alert("Сертификатын дугаараа оруулна уу!");
-            return;
-        }
-        
-        resultDiv.classList.remove("hidden");
-        resultDiv.innerHTML = "<span class='text-white'>Хайж байна...</span>";
-        
-        let scriptURL = "https://script.google.com/macros/s/AKfycbwu3UtvYYfSm5CB50rTCYEI1rYk1FzQbp6C_SiVHJKC1yEA2Y-CmmSY4Tn98vE_MGM7sQ/exec";
-        
-        fetch(scriptURL + "?certNo=" + encodeURIComponent(certNo))
-            .then(response => response.json())
-            .then(data => {
-                resultDiv.classList.remove("hidden");
-                if (data.status === "success") {
-                    resultDiv.innerHTML = `
-                        <div style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 15px; border-radius: 12px; text-align: left; margin-top: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                            <h4 style="margin: 0 0 8px 0; font-size: 16px; font-weight: bold;">✅ Сертификат бүртгэлтэй байна</h4>
-                            <p style="margin: 4px 0;"><strong>Эзэмшигч:</strong> ${data.data.fullName}</p>
-                            <p style="margin: 4px 0;"><strong>Сургалт:</strong> ${data.data.courseName}</p>
-                            <p style="margin: 4px 0;"><strong>Олгосон огноо:</strong> ${data.data.issueDate}</p>
-                            <p style="margin: 4px 0;"><strong>Төлөв:</strong> ${data.data.status}</p>
-                        </div>
-                    `;
-                } else {
-                    resultDiv.innerHTML = `
-                        <div style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 15px; border-radius: 12px; text-align: left; margin-top: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                            <p style="margin: 0; font-weight: bold;">❌ ${data.message}</p>
-                        </div>
-                    `;
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                resultDiv.classList.remove("hidden");
-                resultDiv.innerHTML = "<p style='color: #ffcccc;'>Холбогдоход алдаа гарлаа. Дахин оролдоно уу.</p>";
-            });
+(function () {
+  const form = document.getElementById("huaCertForm");
+  const input = document.getElementById("huaCertInput");
+  const button = document.getElementById("huaCertButton");
+  const result = document.getElementById("huaCertResult");
+
+  // Таны одоо ашиглаж буй Google Apps Script хаяг
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwu3UtvYYfSm5CB50rTCYEI1rYk1FzQbp6C_SiVHJKC1yEA2Y-CmmSY4Tn98vE_MGM7sQ/exec";
+
+  function showMessage(message, className) {
+    result.replaceChildren();
+    result.hidden = false;
+    result.className = className;
+    result.textContent = message;
+  }
+
+  function addRow(label, value) {
+    const p = document.createElement("p");
+    const strong = document.createElement("strong");
+
+    strong.textContent = label + ": ";
+    p.appendChild(strong);
+    p.appendChild(
+      document.createTextNode(
+        value == null || value === "" ? "—" : String(value)
+      )
+    );
+
+    result.appendChild(p);
+  }
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const certNo = input.value.trim();
+
+    if (!certNo) {
+      showMessage(
+        "Сертификатын дугаараа оруулна уу.",
+        "hua-cert-error"
+      );
+      input.focus();
+      return;
     }
+
+    button.disabled = true;
+    button.textContent = "Шалгаж байна...";
+
+    showMessage(
+      "Сертификатын бүртгэлээс хайж байна...",
+      "hua-cert-loading"
+    );
+
+    try {
+      const url = new URL(SCRIPT_URL);
+      url.searchParams.set("certNo", certNo);
+
+      const response = await fetch(url.toString(), {
+        method: "GET",
+        redirect: "follow"
+      });
+
+      if (!response.ok) {
+        throw new Error("HTTP " + response.status);
+      }
+
+      const data = await response.json();
+
+      if (data.status === "success" && data.data) {
+        result.replaceChildren();
+        result.hidden = false;
+        result.className = "hua-cert-success";
+
+        const heading = document.createElement("strong");
+        heading.textContent = "✓ Сертификат бүртгэлтэй байна";
+        result.appendChild(heading);
+
+        addRow("Эзэмшигч", data.data.fullName);
+        addRow("Сургалт", data.data.courseName);
+        addRow("Олгосон огноо", data.data.issueDate);
+        addRow("Төлөв", data.data.status);
+      } else {
+        showMessage(
+          data.message || "Ийм дугаартай сертификат олдсонгүй.",
+          "hua-cert-error"
+        );
+      }
+    } catch (error) {
+      console.error("Сертификат шалгах алдаа:", error);
+
+      showMessage(
+        "Сертификатын сервертэй холбогдож чадсангүй. " +
+        "Интернет холболт болон Apps Script тохиргоог шалгана уу.",
+        "hua-cert-error"
+      );
+    } finally {
+      button.disabled = false;
+      button.textContent = "Шалгах";
+    }
+  });
+})();
 </script>
+
 </body>
 </html>
