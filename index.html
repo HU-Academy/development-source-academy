@@ -948,25 +948,17 @@
         }
 <!-- === СЕРТИФИКАТ ШАЛГАХ ХЭСЭГ === -->
 <div style="background-color: #0b132b; padding: 40px 20px; display: flex; justify-content: center; width: 100%; box-sizing: border-box;">
-    
     <div style="background: #1c2541; border: 1px solid #3a506b; border-radius: 16px; padding: 30px; max-width: 600px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-align: center; box-sizing: border-box;">
-        
         <div style="font-size: 28px; margin-bottom: 8px;">🎓</div>
         <h3 style="color: #ffffff; font-size: 20px; font-weight: bold; margin: 0 0 8px 0;">Сертификат Баталгаажуулах</h3>
         <p style="color: #94a3b8; font-size: 14px; margin: 0 0 20px 0;">Академиас олгосон сертификатын дугаараар бүртгэлийг онлайнаар шалгах боломжтой.</p>
         
         <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-            <input type="text" id="certInput" placeholder="Сертификатын дугаар (жишээ нь: HUA-2024-08)" 
-                   style="flex: 1; min-width: 250px; padding: 12px 16px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #fff; outline: none; font-size: 14px;">
-            
-            <button onclick="checkCertificate()" style="padding: 12px 24px; background-color: #f59e0b; color: #0f172a; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px;">
-                Шалгах
-            </button>
+            <input type="text" id="certInput" placeholder="Сертификатын дугаар (жишээ нь: HUA-2024-08)" style="flex: 1; min-width: 250px; padding: 12px 16px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #fff; outline: none; font-size: 14px;">
+            <button onclick="checkCertificate()" style="padding: 12px 24px; background-color: #f59e0b; color: #0f172a; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px;">Шалгах</button>
         </div>
 
-        <!-- Үр дүн гарах хэсэг (display: none-оор эхэлнэ) -->
         <div id="certResult" style="display: none; margin-top: 15px;"></div>
-        
     </div>
 </div>
 
@@ -982,7 +974,6 @@
             return;
         }
         
-        // Үр дүнгийн дивийг ил харуулж, хайлтын төлөвийг бичнэ
         resultDiv.style.display = "block";
         resultDiv.innerHTML = "<span style='color: #ffffff;'>Хайж байна...</span>";
         
@@ -1017,5 +1008,3 @@
             });
     }
 </script>
-</body>
-</html>
