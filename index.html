@@ -946,7 +946,7 @@
         function closeDetailsModal() {
             document.getElementById('detailsModal').classList.add('hidden');
         }
-<!-- === СЕРТИФИКАТ ШАЛГАХ ХЭСЭГ (Нарийхан, цэмцгэр загвар) === -->
+<!-- === 1. СЕРТИФИКАТ ШАЛГАХ ФОРМ (HTML) === -->
 <div style="background-color: #0b132b; padding: 40px 20px; display: flex; justify-content: center; width: 100%; box-sizing: border-box;">
     <div style="background: #1c2541; border: 1px solid #3a506b; border-radius: 16px; padding: 25px; max-width: 420px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-align: center; box-sizing: border-box;">
         
@@ -959,12 +959,13 @@
             <button onclick="checkCertificate()" style="padding: 10px 20px; background-color: #f59e0b; color: #0f172a; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 13px;">Шалгах</button>
         </div>
 
-        <div id="certResult" style="display: none; margin-top: 15px;"></div>
+        <div id="certResult" class="hidden" style="margin-top: 15px;"></div>
     </div>
 </div>
 
-<!-- === JAVASCRIPT ХЭСЭГ === -->
+<!-- === 2. СРИПТ ХЭСЭГ (JavaScript) === -->
 <script>
+    // Google Sheets-тэй холбогдох сертификат шалгах функц
     function checkCertificate() {
         let certInput = document.getElementById("certInput");
         let resultDiv = document.getElementById("certResult");
@@ -975,28 +976,28 @@
             return;
         }
         
-        resultDiv.style.display = "block";
-        resultDiv.innerHTML = "<span style='color: #94a3b8; font-size: 13px;'>Хайж байна...</span>";
+        resultDiv.classList.remove("hidden");
+        resultDiv.innerHTML = "<span class='text-white'>Хайж байна...</span>";
         
         let scriptURL = "https://script.google.com/macros/s/AKfycbwu3UtvYYfSm5CB50rTCYEI1rYk1FzQbp6C_SiVHJKC1yEA2Y-CmmSY4Tn98vE_MGM7sQ/exec";
         
         fetch(scriptURL + "?certNo=" + encodeURIComponent(certNo))
             .then(response => response.json())
             .then(data => {
-                resultDiv.style.display = "block";
+                resultDiv.classList.remove("hidden");
                 if (data.status === "success") {
                     resultDiv.innerHTML = `
-                        <div style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 12px; border-radius: 10px; text-align: left; margin-top: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 13px;">
-                            <h4 style="margin: 0 0 6px 0; font-size: 14px; font-weight: bold;">✅ Сертификат бүртгэлтэй байна</h4>
-                            <p style="margin: 3px 0;"><strong>Эзэмшигч:</strong> ${data.data.fullName}</p>
-                            <p style="margin: 3px 0;"><strong>Сургалт:</strong> ${data.data.courseName}</p>
-                            <p style="margin: 3px 0;"><strong>Олгосон огноо:</strong> ${data.data.issueDate}</p>
-                            <p style="margin: 3px 0;"><strong>Төлөв:</strong> ${data.data.status}</p>
+                        <div style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 15px; border-radius: 12px; text-align: left; margin-top: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                            <h4 style="margin: 0 0 8px 0; font-size: 16px; font-weight: bold;">✅ Сертификат бүртгэлтэй байна</h4>
+                            <p style="margin: 4px 0;"><strong>Эзэмшигч:</strong> ${data.data.fullName}</p>
+                            <p style="margin: 4px 0;"><strong>Сургалт:</strong> ${data.data.courseName}</p>
+                            <p style="margin: 4px 0;"><strong>Олгосон огноо:</strong> ${data.data.issueDate}</p>
+                            <p style="margin: 4px 0;"><strong>Төлөв:</strong> ${data.data.status}</p>
                         </div>
                     `;
                 } else {
                     resultDiv.innerHTML = `
-                        <div style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 12px; border-radius: 10px; text-align: left; margin-top: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 13px;">
+                        <div style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 15px; border-radius: 12px; text-align: left; margin-top: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                             <p style="margin: 0; font-weight: bold;">❌ ${data.message}</p>
                         </div>
                     `;
@@ -1004,8 +1005,8 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                resultDiv.style.display = "block";
-                resultDiv.innerHTML = "<p style='color: #ffcccc; font-size: 13px;'>Холбогдоход алдаа гарлаа. Дахин оролдоно уу.</p>";
+                resultDiv.classList.remove("hidden");
+                resultDiv.innerHTML = "<p style='color: #ffcccc;'>Холбогдоход алдаа гарлаа. Дахин оролдоно уу.</p>";
             });
     }
 </script>
