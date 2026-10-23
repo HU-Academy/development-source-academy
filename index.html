@@ -946,31 +946,24 @@
         function closeDetailsModal() {
             document.getElementById('detailsModal').classList.add('hidden');
         }
-<!-- === СЕРТИФИКАТ ШАЛГАХ ХЭСЭГ === -->
+<!-- === СЕРТИФИКАТ ШАЛГАХ ХЭСЭГ (Нарийхан, цэмцгэр загвар) === -->
 <div style="background-color: #0b132b; padding: 40px 20px; display: flex; justify-content: center; width: 100%; box-sizing: border-box;">
-    
-    <div style="background: #1c2541; border: 1px solid #3a506b; border-radius: 16px; padding: 30px; max-width: 600px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-align: center; box-sizing: border-box;">
+    <div style="background: #1c2541; border: 1px solid #3a506b; border-radius: 16px; padding: 30px; max-width: 550px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-align: center; box-sizing: border-box;">
         
         <div style="font-size: 28px; margin-bottom: 8px;">🎓</div>
         <h3 style="color: #ffffff; font-size: 20px; font-weight: bold; margin: 0 0 8px 0;">Сертификат Баталгаажуулах</h3>
         <p style="color: #94a3b8; font-size: 14px; margin: 0 0 20px 0;">Академиас олгосон сертификатын дугаараар бүртгэлийг онлайнаар шалгах боломжтой.</p>
         
         <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-            <input type="text" id="certInput" placeholder="Сертификатын дугаар (жишээ нь: HUA-2024-08)" 
-                   style="flex: 1; min-width: 250px; padding: 12px 16px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #fff; outline: none; font-size: 14px;">
-            
-            <button onclick="checkCertificate()" style="padding: 12px 24px; background-color: #f59e0b; color: #0f172a; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px;">
-                Шалгах
-            </button>
+            <input type="text" id="certInput" placeholder="Сертификатын дугаар (жишээ нь: HUA-2024-08)" style="flex: 1; min-width: 220px; padding: 12px 16px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #fff; outline: none; font-size: 14px;">
+            <button onclick="checkCertificate()" style="padding: 12px 24px; background-color: #f59e0b; color: #0f172a; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px;">Шалгах</button>
         </div>
 
-        <!-- Анхны ажиллаж байсан hidden классыг буцааж орууллаа -->
-        <div id="certResult" class="hidden"></div>
-        
+        <div id="certResult" class="hidden" style="margin-top: 15px;"></div>
     </div>
 </div>
 
-<!-- === JAVASCRIPT ХЭСЭГ (Анхны ажиллаж байсан логикоор) === -->
+<!-- === JAVASCRIPT ХЭСЭГ === -->
 <script>
     function checkCertificate() {
         let certInput = document.getElementById("certInput");
