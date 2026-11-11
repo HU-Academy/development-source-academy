@@ -143,116 +143,172 @@
     </div>
 </nav>
 
-   <!-- HERO SECTION -->
-    <section class="hero-bg relative text-white py-20 lg:py-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-brand-gold text-sm font-semibold">
-                        <i class="fa-solid fa-certificate"></i>
-                        <span>Төгсөгчдөд Боловсролын яам, Боловсролын ерөнхий газрын баталгаажсан албан ёсны сертификат, мэргэжлийн үнэмлэх олгоно</span>
-                    </div>
+  
+<!-- HERO SECTION - COMPACT DESIGN -->
+<section class="hero-bg relative text-white py-7 lg:py-9 overflow-hidden">
+    <div class="absolute inset-0 bg-black/30"></div>
 
-                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight">
-                        Ирээдүйн чадварлаг <br><span class="gradient-text">Мэргэжилтэн</span> болоорой
-                    </h1>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 
-                    <p class="text-lg text-gray-200 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                        Хүнд машин механизм, техникийн болон оффисын нарийн мэргэжлээр дадлага туршлагатай багш нар онол болон дадлага хосолсон чанартай сургалтад таныг урьж байна.
-                    </p>
-
-                    <!-- Quick Contact Badges -->
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
-                        <a href="tel:99354112" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg flex items-center space-x-3 transition transform hover:scale-105">
-                            <i class="fa-solid fa-phone-volume text-xl"></i>
-                            <div class="text-left">
-                                <div class="text-xs font-normal opacity-90">Шууд залгах 1</div>
-                                <div class="text-lg">99354112</div>
-                            </div>
-                        </a>
-                        <a href="tel:88194112" class="bg-brand-lightBlue hover:bg-blue-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg flex items-center space-x-3 transition transform hover:scale-105">
-                            <i class="fa-solid fa-phone-volume text-xl"></i>
-                            <div class="text-left">
-                                <div class="text-xs font-normal opacity-90">Шууд залгах 2</div>
-                                <div class="text-lg">88194112</div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="pt-4 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-300">
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
-                            <span>Дадлага дээр суурилсан</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
-                            <span>Ажилд зуучлах боломж</span>
-                        </div>
-                    </div>
-                </div>
-<!-- Hero Form / Highlights Box -->
-<div id="register-form" class="lg:col-span-5">
-    <div class="bg-white/95 backdrop-blur-lg rounded-2xl p-6 sm:p-8 text-gray-800 shadow-2xl border border-white/40">
-        <h3 class="text-2xl font-bold text-brand-blue mb-2">Хурдан Бүртгэл</h3>
-        <p class="text-sm text-gray-600 mb-6">Сонирхож буй сургалтаа сонгон мэдээллээ үлдээгээрэй.</p>
-
-        <!-- Formspree холбоос болон method="POST" нэмэгдсэн хэсэг -->
-        <form action="https://formspree.io/f/mbgdqala" method="POST" class="space-y-4">
-            <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Таны Нэр</label>
-                <!-- name="name" нэмэгдсэн -->
-                <input type="text" name="name" required placeholder="Овог Нэр" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none">
-            </div>
-            <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Утасны Дугаар</label>
-                <!-- name="phone" нэмэгдсэн -->
-                <input type="tel" name="phone" required placeholder="99XXXXXX" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none">
-            </div>
-            
-<div>
-    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
-        Сургалтын хэлбэр *
-    </label>
-    <select name="training_type" required
-        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none bg-white">
-        <option value="">-- Сургалтын хэлбэрээ сонгоно уу --</option>
-        <option value="Танхимын сургалтаар">1. Танхимын сургалтаар</option>
-        <option value="Цахим зайн сургалтаар">2. Цахим зайн сургалтаар</option>
-    </select>
-</div>
-
-            <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Мэргэжил сонгох</label>
-                <!-- name="course" нэмэгдсэн -->
-                <select name="course" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-lightBlue focus:outline-none bg-white">
-                    <option value="">-- Мэргэжил сонгоно уу --</option>
-                    <option value="Ковш оператор">1. Ковш оператор</option>
-                    <option value="Экскаватор оператор">2. Экскаватор оператор</option>
-                    <option value="Дамп оператор">3. Дамп оператор</option>
-                    <option value="Нарийн бичгийн дарга & Архивын ажилтан">4. Нарийн бичгийн дарга & Архивын ажилтан</option>
-                    <option value="Цахилгаанчин">5. Цахилгаанчин</option>
-                    <option value="Нярав">6. Нярав</option>
-                    <option value="Гагнуурчин">7. Гагнуурчин</option>
-                    <option value="Токарийн суурь машины оператор">Токарийн суурь машины оператор</option>
-                </select>
-            </div>
-            <div class="mt-4">
-                <label class="block text-gray-700 font-medium mb-2 text-xs font-bold uppercase tracking-wider">Оршин суугаа хот, аймаг, сум</label>
-                <!-- name="location" хэвээрээ байна -->
-                <input type="text" name="location" placeholder="Жишээ нь: Орхон аймаг, Баян-Өндөр сум" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-lightBlue">
-            </div>
-            
-            <button type="submit" class="w-full bg-brand-gold hover:bg-yellow-500 text-brand-dark font-black py-3.5 rounded-lg shadow-md transition transform active:scale-98">
-                СУРГАЛТАД БҮРТГҮҮЛЭХ
-            </button>
-        </form>
-                    </div>
+            <!-- ЗҮҮН ТАЛЫН ТАНИЛЦУУЛГА -->
+            <div class="lg:col-span-7">
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1.5 mb-3">
+                    <span class="w-2 h-2 bg-yellow-400 rounded-full"></span>
+                    <span class="text-xs sm:text-sm font-semibold">ХӨГЖЛИЙН УНДРАГА АКАДЕМИ</span>
                 </div>
 
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-3">
+                    Ирээдүйн мэргэжлээ
+                    <span class="text-yellow-400">ӨНӨӨДӨР</span>
+                    эзэмшээрэй
+                </h1>
+
+                <p class="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed mb-4 max-w-2xl">
+                    Хөдөлмөрийн зах зээлд эрэлттэй мэргэжил эзэмшүүлэх
+                    богино хугацааны сургалт. Онол, дадлагыг хослуулсан
+                    сургалтаар ур чадвараа хөгжүүлээрэй.
+                </p>
+
+                <!-- УТАСНЫ ДУГААР -->
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <a href="tel:99354112"
+                       class="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-bold px-4 py-2 rounded-lg text-sm transition">
+                        <i class="fas fa-phone-alt"></i>
+                        9935-4112
+                    </a>
+
+                    <a href="tel:88194112"
+                       class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-4 py-2 rounded-lg text-sm transition">
+                        <i class="fas fa-phone-alt"></i>
+                        8819-4112
+                    </a>
+                </div>
+
+                <!-- ДАВУУ ТАЛУУД -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 max-w-2xl">
+                    <div class="flex items-center gap-2 text-xs sm:text-sm">
+                        <i class="fas fa-check-circle text-yellow-400"></i>
+                        <span>Мэргэжлийн багш</span>
+                    </div>
+
+                    <div class="flex items-center gap-2 text-xs sm:text-sm">
+                        <i class="fas fa-check-circle text-yellow-400"></i>
+                        <span>Дадлага давамгай</span>
+                    </div>
+
+                    <div class="flex items-center gap-2 text-xs sm:text-sm">
+                        <i class="fas fa-check-circle text-yellow-400"></i>
+                        <span>Гэрчилгээ олгоно</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- БАРУУН ТАЛЫН БҮРТГЭЛИЙН ХЭСЭГ -->
+            <div id="register-form" class="lg:col-span-5">
+                <div class="bg-white text-gray-800 rounded-2xl shadow-2xl p-4 sm:p-5 max-w-xl mx-auto">
+                    <div class="text-center mb-3">
+                        <h2 class="text-xl sm:text-2xl font-extrabold text-gray-900">
+                            Сургалтад бүртгүүлэх
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-500 mt-1">
+                            Мэдээллээ бөглөөд илгээнэ үү
+                        </p>
+                    </div>
+
+                    <form action="https://formspree.io/f/mbgdqala" method="POST" class="space-y-3">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">
+                                    Овог, нэр
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    required
+                                    placeholder="Таны овог нэр"
+                                    class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">
+                                    Утасны дугаар
+                                </label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    required
+                                    placeholder="Утасны дугаар"
+                                    class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">
+                                Сургалтын хэлбэр
+                            </label>
+                            <select
+                                name="training_type"
+                                required
+                                class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                <option value="">Сургалтын хэлбэр сонгоно уу</option>
+                                <option value="Танхимын сургалтаар">Танхимын сургалтаар</option>
+                                <option value="Цахимаар">Цахимаар</option>
+                                <option value="Хосолсон хэлбэрээр">Хосолсон хэлбэрээр</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">
+                                Суралцах мэргэжил
+                            </label>
+                            <select
+                                name="course"
+                                required
+                                class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                <option value="">Мэргэжил сонгоно уу</option>
+                                <option value="Ковш оператор">Ковш оператор</option>
+                                <option value="Экскаватор оператор">Экскаватор оператор</option>
+                                <option value="Дамп оператор">Дамп оператор</option>
+                                <option value="Нарийн бичгийн дарга & Архивын ажилтан">Нарийн бичгийн дарга & Архивын ажилтан</option>
+                                <option value="Цахилгаанчин">Цахилгаанчин</option>
+                                <option value="Токарийн суурь машины операторчин">Токарийн суурь машины операторчин</option>
+                                <option value="Гагнуурчин">Гагнуурчин</option>
+                                <option value="Бусад">Бусад</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">
+                                Оршин суугаа газар
+                            </label>
+                            <input
+                                type="text"
+                                name="location"
+                                placeholder="Аймаг, хот, сум"
+                                class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="w-full bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-extrabold py-2.5 rounded-lg text-sm transition shadow-md">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            БҮРТГҮҮЛЭХ
+                        </button>
+
+                        <p class="text-center text-xs text-gray-500">
+                            Таны мэдээллийг зөвхөн сургалтын бүртгэлд ашиглана.
+                        </p>
+                    </form>
+                </div>
+            </div>
+
         </div>
-    </section> 
+    </div>
+</section>
+<!-- HERO SECTION END -->
+
     <!-- СУРГАЛТЫН ЗАР SECTION -->
 <section id="announcements" class="py-16 bg-gradient-to-br from-amber-50 to-orange-50 border-y border-amber-200/60">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
