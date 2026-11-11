@@ -895,8 +895,19 @@
             e.target.reset();
         }
 
-        function handleModalSubmit(e) {
+      function handleModalSubmit(e) {
             e.preventDefault();
+            
+            // Оруулсан утгуудыг авч байна
+            const fullName = document.getElementById('modalName').value;
+            const phone = document.getElementById('modalPhone').value;
+            const trainingType = document.getElementById('modalTrainingType').value; // Шинээр нэмсэн сургалтын хэлбэр
+            const course = document.getElementById('modalCourseSelect').value;
+            const note = document.getElementById('modalNote') ? document.getElementById('modalNote').value : '';
+
+            // Консол дээр шалгах
+            console.log("Бүртгэл:", { fullName, phone, trainingType, course, note });
+
             alert('Бүртгэл амжилттай хийгдлээ! Манай сургалтын зөвлөх тун удахгүй холбогдоно.');
             closeModal();
             e.target.reset();
